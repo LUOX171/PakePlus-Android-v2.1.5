@@ -51,8 +51,11 @@ module.exports = {
         }
         // 非站内链接：return false 跳浏览器，return true 完全拦截
         return false;
-      }
-    }
+      },
+  onPageStarted: function (view, url, favicon) {
+    view.getSettings().setSupportMultipleWindows(false);
+  }
+     }
   },
   // iOS 端拦截规则（需 Mac + Xcode）
   ios: {
